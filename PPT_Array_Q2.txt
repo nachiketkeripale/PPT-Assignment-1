@@ -1,0 +1,59 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+
+public class Main
+{   
+    public void removeDuplicate(int [] inputArray, int removeVal){
+        
+        int count = 0;
+        for(int i=0;i<inputArray.length;i++) {
+            for(int j=0;j<inputArray.length;j++) {
+                if(inputArray[j]==removeVal) {
+                    int temp;
+                    temp = inputArray[i];
+                    inputArray[i] = inputArray[j];
+                    inputArray[j] = temp;
+                }
+            }
+        }
+        
+        for(int i=0;i<inputArray.length;i++) {
+            if(inputArray[i]==removeVal){
+                count++;
+            }
+        }
+        
+        for(int i=0;i<inputArray.length-count;i++){
+            System.out.println(inputArray[i]);
+        }
+    }
+    
+	public static void main(String[] args) {
+	    
+	    Scanner sc = new Scanner(System.in);
+	    
+	    System.out.println("Enter Array Length");
+	    int arrayLength = sc.nextInt();
+	    
+	    int[] data = new int[arrayLength];
+	    int i;
+	    int val;
+	    
+	    System.out.println("Enter element in array:");
+	    for(i=0; i<data.length;i++) {
+	        data[i] = sc.nextInt();
+	    }
+	    
+	    System.out.println("Enter target Value :");
+	    val = sc.nextInt();
+	    
+	    Main m = new Main();
+	    m.removeDuplicate(data,val);
+	}
+}

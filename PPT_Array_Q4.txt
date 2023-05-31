@@ -1,0 +1,46 @@
+import java.util.*;
+
+public class Main
+{
+   
+    
+    public int[] incrementDigit(int [] inputArray,int len ) {
+        
+        if(inputArray[len-1] == 9) {
+            incrementDigit(inputArray,len-1);
+            inputArray[len-1] = 0;
+        }
+        else {
+            inputArray[len-1] = inputArray[len-1] + 1;
+        }
+        
+        return inputArray;
+    }
+    
+public static void main(String[] args) {
+	    
+	    Scanner sc = new Scanner(System.in);
+	    
+	    System.out.println("Enter Array Length");
+	    int arrayLength = sc.nextInt();
+	    
+	    int[] data = new int[arrayLength];
+	    int i;
+	    int val;
+	    
+	    System.out.println("Enter element in array:");
+	    for(i=0; i<data.length;i++) {
+	        data[i] = sc.nextInt();
+	    }
+	    
+	    
+	    int[] res = new int[arrayLength];
+	    
+	    Main m = new Main();
+	    res = m.incrementDigit(data,arrayLength);
+	    
+	    for(i=0;i<res.length;i++) {
+	        System.out.print(res[i]);
+	    }
+	}
+}
