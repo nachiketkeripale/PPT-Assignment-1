@@ -1,10 +1,12 @@
-/******************************************************************************
+/*
+💡 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
-                            Online Java Compiler.
-                Code, Compile, Run and Debug java program online.
-Write your code in this editor and press "Run" button to execute it.
+**Example 1:**
+Input: nums = [1,2,3,1]
 
-*******************************************************************************/
+Output: true
+*/
+
 import java.util.*;
 
 public class Main
